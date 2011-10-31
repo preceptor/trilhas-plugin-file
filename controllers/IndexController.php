@@ -44,6 +44,7 @@ class File_IndexController extends Tri_Controller_Action
         $table = new Tri_Db_Table('file');
         $session = new Zend_Session_Namespace('data');
         $data  = $this->_getAllParams();
+        $this->_helper->layout->disableLayout();
 
         if ($form->isValid($data)) {
             if (!$form->location->receive()) {
@@ -58,9 +59,7 @@ class File_IndexController extends Tri_Controller_Action
             $id = $row->save();
             Application_Model_Timeline::save('saved a new file', $data['name']);
         } else {
-            $this->_response->prepend('messages', $this->view->translate('Error'));
-            $this->view->form = $form;
-            $this->render('form');
+            $this->view->message = $this->view->translate('Error');
         }
     }
 

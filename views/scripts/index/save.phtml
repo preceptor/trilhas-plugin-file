@@ -1,3 +1,8 @@
+
 <script type="text/javascript">
-    window.top.$('.content .file').load('file/index/index/message/true');
+    <?php if ($this->message):?>
+        alert("<?php echo $this->message?>");
+    <?php else:?>
+        window.top.$('.content .file').load('file/index/index/message/true');
+    <?php endif;?>
 </script>

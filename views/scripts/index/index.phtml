@@ -1,17 +1,15 @@
 <?php if($this->isAllowed('form')): ?>	
-	<div class="right"><?php echo $this->ajax("new", 'file/index/form/', 2); ?></div>
+	<div class="right"><?php echo $this->ajax("new", 'file/index/form/', 3); ?></div>
 <?php endif; ?>	
 <div class="left">
     <form id="formFindFile" action="#">
-        <span class="ui-icon ui-icon-search magnifier"></span>
         <input type="text" name="q" id="qFile" style="width: 16em" />
-        <input type="submit" value="ok" /> &nbsp;&nbsp;&nbsp;
+        <input class="btn" type="submit" value="ok" /> &nbsp;&nbsp;&nbsp;
     </form>
 </div>
 <div class="clear">&nbsp;</div>
-<br /><br />
 <?php if (count($this->data)):?>
-    <table class="datatable">
+    <table class="zebra-striped">
         <?php foreach ($this->data as $data): ?>
             <tr>
                 <td><a href="static/<?php echo $data->location?>"><?php echo $data->name?></a></td>
@@ -46,5 +44,5 @@
         return false;
 	});
 
-    $('input[type=button], input[type=submit]').button();
+    
 </script>

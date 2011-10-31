@@ -60,7 +60,7 @@ class File_Form_File extends Zend_Form
 
         $this->addElement($name)
              ->addElement($file)
-             ->addElement('submit', 'Save');
+             ->addElement('submit', 'Save', array('class' => 'btn primary'));
    }
    
    private function _getNewName($name)
